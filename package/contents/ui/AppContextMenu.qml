@@ -105,7 +105,7 @@ Item {
 					menuItem.section = actionItem.type == "title"
 					menuItem.icon = actionItem.icon ? actionItem.icon : null
 					menuItem.clicked.connect(function() {
-						if (isTileGridModel) {
+						if (typeof listModel.trigger !== "undefined") {
 							listModel.trigger(index, actionItem.actionId, actionItem.actionArgument)
 						} else {
 							listModel.triggerIndexAction(index, actionItem.actionId, actionItem.actionArgument)
